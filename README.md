@@ -2,25 +2,23 @@
 
 Determine if the current client support passive events.
 
+## Installation
+
+```
+npm install is-support-passive-events
+```
+
+## Usage example
+
 ``` javascript
-function checkSupportPassiveEvents() {
-  let passiveSupported = false;
+import isSupportPassiveEvents from 'is-support-passive-events';
+```
 
-  try {
-    const options = Object.defineProperty({}, 'passive', {
-      get() {
-        passiveSupported = true;
-      },
-    });
-
-    window.addEventListener('test', options, options);
-    window.removeEventListener('test', options, options);
-  } catch (err) {
-    passiveSupported = false;
-  }
-
-  return passiveSupported;
-}
-
-export default checkSupportPassiveEvents();
+``` javascript
+// When you're declaring your event, check if passive events are supported
+const options = isSupportPassiveEvents
+  ? { passive: true, capture: false }
+  : false;
+  
+document.addEventListener('scroll', handler, options);
 ```

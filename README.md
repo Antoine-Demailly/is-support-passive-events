@@ -2,6 +2,8 @@
 
 Determine if the current client support passive events.
 
+**New in v1.1.0 :** add `eventOptions()` to automatically fallback to basic options if passive events are not supported.
+
 ## Installation
 
 ```
@@ -22,3 +24,22 @@ const options = isSupportPassiveEvents
   
 document.addEventListener('scroll', handler, options);
 ```
+
+## `eventOptions(options [,fallback])` (function)
+
+Automatically use a fallback if passive events are not supported.
+
+Receives the following parameters :
+- **options** (object)
+- **fallback** (boolean) => Default value: `false`
+
+``` javascript
+import { eventOptions } from 'is-support-passive-events';
+```
+
+``` javascript
+document.addEventListener('scroll', handler, eventOptions({
+  passive: true, capture: false
+}));
+```
+

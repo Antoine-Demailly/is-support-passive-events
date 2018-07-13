@@ -10,6 +10,14 @@
     "type": "git",
     "url": "git+https://github.com/Antoine-Demailly/is-support-passive-events.git"
   },
+  "keywords": [
+    "is",
+    "support",
+    "passive",
+    "events",
+    "detect",
+    "passive-events"
+  ],
   "author": "Antoine Demailly <antoine.demailly1@gmail.com>",
   "license": "MIT",
   "bugs": {

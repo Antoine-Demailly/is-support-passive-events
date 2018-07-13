@@ -21,7 +21,7 @@ export const isSupportPassiveEvents = checkSupportPassiveEvents();
 
 function eventOptions(options, fallback) {
   const $fallback = fallback || false;
-  return isSupportPassiveEvents ? options : fallback;
+  return isSupportPassiveEvents ? options : $fallback;
 }
 
 export { eventOptions };
